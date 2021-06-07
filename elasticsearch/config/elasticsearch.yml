@@ -1,0 +1,15 @@
+---
+# # Configuração padrão do Elasticsearch da imagem base do Elasticsearch.
+# # https://github.com/elastic/elasticsearch/blob/master/distribution/docker/src/docker/config/elasticsearch.yml
+#
+cluster.name : "docker-cluster"
+network.host : 0.0.0.0
+
+discovery.type: single-node
+
+# # Configurações do X-Pack
+# # veja https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-xpack.html
+#
+xpack.license.self_generated.type : trial
+xpack.security.enabled : true
+xpack.monitoring.collection.enabled : true
