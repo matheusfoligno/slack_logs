@@ -19,7 +19,7 @@ public class SlackTestResource {
 	private SlackTestService service;
 
 	@GetMapping
-	public ResponseEntity<String> get(@RequestParam String error) throws NotFoundException, BadRequestException {
+	public ResponseEntity<String> get(@RequestParam String error) throws BadRequestException, NotFoundException {
 		return ResponseEntity.ok(service.get(error));
 	}
 
