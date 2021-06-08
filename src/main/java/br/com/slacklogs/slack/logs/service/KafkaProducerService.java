@@ -8,14 +8,13 @@ import org.springframework.stereotype.Service;
 public class KafkaProducerService {
 
 	private static final String TOPIC = "slack";
-	private static final String TOPIC_TESTE = "slack_test";
 
 	@Autowired
 	private KafkaTemplate<String, String> kafkaTemplate;
 
-	public void sendMessage(String message) {
+	public void sendMessage(String message, String messageOtherSystem) {
 		this.kafkaTemplate.send(TOPIC, message);
-		this.kafkaTemplate.send(TOPIC_TESTE, "Teste");
+		this.kafkaTemplate.send(TOPIC, messageOtherSystem);
 	}
 
 }
